@@ -1,27 +1,358 @@
-/* Portrait-Foto in About-Section */
-.about-content {
+/* =========================================================
+   HR ZÜRICH – MODERN ENTERPRISE STYLESHEET
+   Clean | Corporate | Professional
+   ========================================================= */
+
+/* -------------------- RESET -------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------- VARIABLES -------------------- */
+:root {
+    --blue-dark: #0d1b2a;
+    --blue-mid: #1b2a3d;
+    --blue-soft: #33415c;
+
+    --gray-bg: #f6f7f9;
+    --gray-light: #e6e8eb;
+    --gray-mid: #9aa1a9;
+    --gray-dark: #2f3439;
+
+    --white: #ffffff;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+
+    --shadow-soft: 0 6px 18px rgba(0,0,0,0.06);
+    --shadow-strong: 0 14px 40px rgba(0,0,0,0.12);
+
+    --transition: all 0.3s ease;
+}
+
+/* -------------------- BASE -------------------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--gray-bg);
+    color: var(--gray-dark);
+    line-height: 1.65;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* -------------------- NAVBAR -------------------- */
+.navbar {
+    background-color: var(--blue-dark);
+    color: var(--white);
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 46px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 1.6rem;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: var(--blue-mid);
+}
+
+/* -------------------- HERO -------------------- */
+.hero {
+    min-height: 82vh;
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue-soft));
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--white);
+}
+
+.hero-content {
+    max-width: 850px;
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    margin-bottom: 1.3rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--gray-light);
+    margin-bottom: 2.4rem;
+}
+
+/* -------------------- BUTTONS -------------------- */
+.cta-button {
+    display: inline-block;
+    padding: 0.9rem 2.4rem;
+    border-radius: 40px;
+    background-color: var(--white);
+    color: var(--blue-dark);
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-soft);
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-strong);
+}
+
+/* -------------------- SECTIONS -------------------- */
+section {
+    padding: 5rem 2rem;
+}
+
+section h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--blue-dark);
+}
+
+/* -------------------- CARDS -------------------- */
+.intro-cards,
+.services-section {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.4rem;
+}
+
+.card,
+.service-card,
+.impressum-card {
+    background-color: var(--white);
+    padding: 2.4rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+.card:hover,
+.service-card:hover,
+.impressum-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+}
+
+.card h3,
+.service-card h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 0.9rem;
+    color: var(--blue-dark);
+}
+
+.price {
+    margin-top: 1.3rem;
+    font-weight: 700;
+    color: var(--blue-mid);
+}
+
+/* -------------------- ABOUT -------------------- */
+.about-section {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
     flex-wrap: wrap;
+    margin-bottom: 3.5rem;
 }
 
 .about-content p {
-    flex: 1 1 300px;
-    font-size: 1rem;
+    flex: 1;
+    font-size: 1.05rem;
 }
 
 .about-photo {
-    flex: 0 0 200px;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-strong);
+    transition: var(--transition);
 }
 
 .about-photo:hover {
     transform: scale(1.05);
+}
+
+/* -------------------- HOURS & MAP -------------------- */
+.hours-section {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.hours-section ul {
+    list-style: none;
+    margin-bottom: 3rem;
+}
+
+.hours-section li {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.map-container {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-strong);
+}
+
+/* -------------------- CONTACT -------------------- */
+.contact-section {
+    max-width: 620px;
+    margin: auto;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-section label {
+    font-weight: 600;
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 0.95rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--gray-light);
+    font-size: 1rem;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    outline: none;
+    border-color: var(--blue-mid);
+}
+
+.contact-section button {
+    margin-top: 1.2rem;
+    padding: 0.95rem;
+    border-radius: 40px;
+    border: none;
+    background-color: var(--blue-dark);
+    color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.contact-section button:hover {
+    background-color: var(--blue-mid);
+    transform: translateY(-3px);
+}
+
+/* -------------------- THANK YOU -------------------- */
+.thankyou-section {
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.thankyou-section h1 {
+    margin-bottom: 1rem;
+}
+
+/* -------------------- FOOTER -------------------- */
+.footer {
+    background-color: var(--blue-dark);
+    color: var(--gray-light);
+    text-align: center;
+    padding: 1.6rem;
+    font-size: 0.9rem;
+}
+
+/* -------------------- ANIMATIONS -------------------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.9rem;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section {
+        padding: 3.5rem 1.4rem;
+    }
+
+    .about-content {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .about-photo {
+        width: 180px;
+        height: 180px;
+    }
 }
