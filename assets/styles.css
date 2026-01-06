@@ -3,11 +3,8 @@
    =============================== */
 :root {
     --dark-blue: #0f1f33;
-    --blue-glass: rgba(20, 33, 61, 0.75);
     --white: #ffffff;
-    --gray-light: #d1d5db;
-    --gray-medium: #9ca3af;
-    --card-bg: rgba(18, 32, 54, 0.85);
+    --gray-dark: #0f1f33;
 }
 
 * {
@@ -19,7 +16,7 @@
 body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #0a1a33 0%, #102744 100%);
-    color: var(--gray-light);
+    color: var(--white);
     line-height: 1.7;
 }
 
@@ -28,7 +25,6 @@ body {
    =============================== */
 h1, h2, h3 {
     font-family: 'Space Grotesk', sans-serif;
-    color: var(--white);
     font-weight: 700;
 }
 
@@ -44,6 +40,14 @@ h2 {
 
 p {
     font-size: 1rem;
+}
+
+/* ===============================
+   TOP BAR
+   =============================== */
+.top-bar {
+    height: 6px;
+    background: var(--dark-blue);
 }
 
 /* ===============================
@@ -69,7 +73,7 @@ p {
 
 .nav-link {
     margin-left: 1.8rem;
-    color: var(--gray-medium);
+    color: #9ca3af;
     font-size: 0.95rem;
     transition: color 0.3s ease;
 }
@@ -108,7 +112,7 @@ p {
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(255,255,255,0.15);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
 .cta-button.small {
@@ -150,7 +154,8 @@ p {
    =============================== */
 .impressum-card {
     margin-top: 4rem;
-    background: var(--card-bg);
+    background: #ffffff; /* weiß */
+    color: var(--gray-dark); /* dunkelblau Schrift */
     padding: 2rem;
     border-radius: 14px;
 }
@@ -169,6 +174,7 @@ p {
 .services-title {
     text-align: center;
     margin-bottom: 4.5rem;
+    color: var(--gray-dark);
 }
 
 .services-grid {
@@ -180,26 +186,26 @@ p {
 }
 
 .service-card {
-    background: var(--blue-glass);
-    backdrop-filter: blur(12px);
+    background: #ffffff; /* weiß */
+    color: var(--gray-dark); /* dunkelblau */
     padding: 2.8rem;
     border-radius: 18px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.12);
 }
 
 .service-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
 .service-card .price {
     margin-top: 1rem;
     font-weight: 600;
-    color: var(--white);
 }
 
 /* ===============================
-   CONTACT
+   CONTACT / ANFRAGE
    =============================== */
 .contact-section {
     padding: 5rem 3rem;
@@ -208,7 +214,7 @@ p {
 }
 
 .contact-title {
-    color: var(--dark-blue);
+    color: #ffffff; /* weiß */
     font-weight: 800;
     margin-bottom: 2rem;
 }
@@ -220,13 +226,13 @@ form textarea {
     margin-bottom: 1.2rem;
     border-radius: 10px;
     border: none;
-    background: rgba(0,0,0,0.3);
-    color: var(--white);
+    background: #ffffff;
+    color: var(--gray-dark);
 }
 
 form button {
-    background: var(--white);
-    color: var(--dark-blue);
+    background: var(--gray-dark);
+    color: #ffffff;
     border: none;
     padding: 0.8rem 2.2rem;
     border-radius: 30px;
@@ -243,15 +249,16 @@ form button {
     margin: auto;
 }
 
+.hours-section h1 {
+    color: #ffffff; /* Überschrift weiß */
+}
+
 .hours-text {
-    color: var(--dark-blue);
+    color: #ffffff; /* Text über Öffnungszeiten */
     font-weight: 600;
     margin-bottom: 2.5rem;
 }
 
-/* ===============================
-   MAP
-   =============================== */
 .map-container iframe {
     width: 100%;
     height: 400px;
@@ -267,7 +274,7 @@ form button {
     text-align: center;
     font-size: 0.85rem;
     opacity: 0.9;
-    background: #0f1f33;
+    background: var(--dark-blue);
     color: #ffffff;
 }
 
