@@ -24,10 +24,11 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: var(--bg-dark);
-    color: var(--gray-light);
+    background: linear-gradient(135deg, #cce0ff 0%, #e6f0ff 100%);
+    color: #0f1f33; /* dunkler Text für Kontrast */
     line-height: 1.7;
 }
+
 
 a {
     color: inherit;
