@@ -398,3 +398,6 @@ section h1 {
         align-items: center;
     }
 }
+h1, h2, h3 {
+    color: #ffffff;
+}
